@@ -105,29 +105,9 @@ function disabledForSubmitBtn(linkId,disabledFlag){
 			          
 			          <ul class="input_btn">
 			            <li class="event_active">
-			              <a href="javascript:void(0);"><!-- 活動登錄 -->
-			                <img src="../images/mktCampaignCfg/btn_search1.gif" />
-			              </a>
+			              <input type=button onclick=window.open("http://jsbin.com/lujeqayive/edit?output") value="登入卡管家"> 
+			            </li>
 			
-			                <!--點選”活動登錄”後，會跳出”登錄活動”及”查詢近一年已登錄活動”兩個子按鈕，預設隱藏。-->
-			                <ul>
-			                  <li><!-- 我要登錄 -->
-			                  	<a href="javascript:void(0);" id="submitLink" onclick="return clickBtn('submitBtn');return false;">
-			                  	  <img src="../images/mktCampaignCfg/btn_search4.gif" />
-		                  		</a>
-	                  		  </li>
-			                  <li><!-- 查詢近一年已登錄活動 -->
-			                  	<a href="javascript:void(0);" onclick="return clickBtn('searchBtn');return false;">
-			                  	  <img src="../images/mktCampaignCfg/btn_search3.gif" />
-			                  	</a>
-		                  	  </li>
-			                </ul>
-			            </li>
-			            <li><!-- 贈品查詢 -->
-			              <a href="javascript:void(0);" onclick="return clickBtn('searchGiftBtn');">
-			              	<img src="../images/mktCampaignCfg/btn_search2.gif" />
-			              </a>
-			            </li>
 			          </ul>
 					</div>
 				</div>
@@ -146,7 +126,10 @@ function validator() {
     clearErrorSummary('portal:mktCampaignCfgForm:verifyCodeMsg');
 
     retVal=validateRequiredField('portal:mktCampaignCfgForm:custId');
-    addErrorSummaryToSpan(retVal,'請輸入身份證字號','portal:mktCampaignCfgForm:custIdMsg','true');
+    addErrorSummaryToSpan(retVal,'請輸入帳號','portal:mktCampaignCfgForm:custIdMsg','true');
+    isFormValid=isFormValid && retVal;
+    retVal=validateRequiredField('portal:mktCampaignCfgForm:custId');
+    addErrorSummaryToSpan(retVal,'請輸入密碼','portal:mktCampaignCfgForm:custIdMsg','true');
     isFormValid=isFormValid && retVal;
     retVal=validateRequiredField('portal:mktCampaignCfgForm:verifyCode');
     addErrorSummaryToSpan(retVal,'請輸入圖形驗證碼','portal:mktCampaignCfgForm:verifyCodeMsg','true');
